@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-export default function useLocalStorage(name, val) {
+export default function useLocalStorage(name) {
   const [value, setValue] = useState(localStorage.getItem(name) || "");
 
   useEffect(() => {
-    localStorage.setItem(name, val);
-  }, [name, val]);
+    localStorage.setItem(name, value);
+  }, [name, value]);
 
   return [value, setValue];
 }
