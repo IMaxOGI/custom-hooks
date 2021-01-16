@@ -4,8 +4,8 @@ import useDocumentTitle from "./hooks/useDocumentTitle";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 export default function ExampleOnlineStatus() {
-  const [value, setValue] = useLocalStorage();
-  useDocumentTitle();
+  const [value, setValue] = useLocalStorage("name", "Bob");
+  useDocumentTitle("Занятия | Hillel LMS");
   const isOnline = useOnlineStatus();
 
   const inputStorage = (event) => setValue(event.target.value);
